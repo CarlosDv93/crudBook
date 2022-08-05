@@ -27,11 +27,13 @@ public class BookController {
         return service.saveBook(bookDto);
     }
 
+    @ApiOperation(value = "Update a book")
     @PutMapping(value = "/", produces = "application/json")
     public BookDto updateBook(@RequestBody BookDto bookDto) {
         return service.updateBook(bookDto);
     }
 
+    @ApiOperation(value = "Delete a book")
     @DeleteMapping(value = "/{id}", produces = "application/json")
     public void deleteBook(@PathVariable("id") Long id) {
         service.deleteABook(id);
